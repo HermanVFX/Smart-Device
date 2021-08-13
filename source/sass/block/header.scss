@@ -1,0 +1,70 @@
+.header {
+  height: 85px;
+}
+
+.header__wrapper {
+  max-width: 1411px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.header__contacts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  margin-top: 37px;
+}
+
+.header__contact-item {
+  font-family: $font-family-mono;
+  color: $white;
+  text-decoration: none;
+  padding-left: 50px;
+  margin-right: 38px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &--mail::after {
+    background-image: url("../img/mail.svg");
+    width: 19px;
+    height: 14px;
+    left: 0;
+    top: 0;
+  }
+
+  &--phone::after {
+    background-image: url("../img/phone.svg");
+    width: 18px;
+    height: 18px;
+    left: 0;
+    top: 0;
+  }
+}
+
+.header__logo {
+  margin-top: 33px;
+}
+
+.header__contact-button {
+  height: 45px;
+  width: 180px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $white;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid $white;
+}
