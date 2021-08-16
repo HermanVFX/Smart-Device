@@ -1,0 +1,244 @@
+.form-block {
+  background-color: $primary;
+  background-image: url("../img/airplane-bg.svg");
+  background-position: 100% 64%;
+  background-repeat: no-repeat;
+  background-size: 1750px;
+  min-height: 580px;
+  padding-top: 90px;
+}
+
+.form-block__wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  max-width: 1170px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin: auto;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 511px;
+    height: 288px;
+    background-image: url("../img/airplane.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: -26px;
+    top: 72px;
+  }
+}
+
+.form-block__form {
+  font-family: $font-family-mono;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  width: 570px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: $white;
+
+  & p:first-child {
+    font-family: $font-family-roboto-cond;
+    width: 100%;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 51px;
+    margin-left: -4px;
+    margin-bottom: 10px;
+  }
+
+  & p:not(:first-child) {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  & input,
+  & textarea {
+    background-color: #19baff;
+    color: $white;
+    border: none;
+    border-radius: 0;
+    padding: 14px 16px;
+  }
+
+  & button {
+    width: 270px;
+    height: 45px;
+    border: 1px solid $white;
+    border-radius: 5px;
+    background-color: transparent;
+    color: $white;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: $white;
+      color: $primary;
+      cursor: pointer;
+    }
+  }
+}
+
+.form-block__form-element {
+  font-family: $font-family-mono;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: $white;
+
+  &::placeholder {
+    color: $white;
+  }
+
+  &--name,
+  &--phone {
+    width: 238px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  &--text {
+    width: 100%;
+    max-height: 130px;
+    margin-bottom: 42px;
+  }
+
+  &--checkbox {
+    width: 270px;
+    order: 1;
+  }
+}
+
+@media (max-width: $tablet) {
+  .form-block {
+    background-color: $primary;
+    background-image: none;
+    min-height: 583px;
+    padding-top: 80px;
+  }
+
+  .form-block__wrapper {
+    justify-content: center;
+    max-width: 590px;
+    padding-left: 0;
+    padding-right: 0;
+
+    &::after {
+      width: 0;
+      height: 0;
+      visibility: hidden;
+    }
+  }
+
+  .form-block__form {
+    width: 100%;
+
+    & p:first-child {
+      font-size: 32px;
+      line-height: 140.62%;
+      margin-bottom: 17px;
+    }
+
+    & p:not(:first-child) {
+      width: 100%;
+      margin-bottom: 10px;
+      margin-left: 2px;
+    }
+
+    & input {
+      padding: 17px 19px;
+    }
+
+    & textarea {
+      padding: 13px 19px;
+    }
+
+    & button {
+      width: 280px;
+      margin-left: 2px;
+    }
+  }
+
+  .form-block__form-element {
+    font-family: $font-family-mono;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: $white;
+
+    &--name,
+    &--phone {
+      width: 240px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    &--text {
+      width: 100%;
+      max-height: 134px;
+      margin-bottom: 46px;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .form-block {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 31px;
+    min-height: 610px;
+  }
+
+  .form-block__form {
+    & p:first-child {
+      font-size: 28px;
+      line-height: 140.62%;
+      margin-left: 0;
+      margin-bottom: 12px;
+    }
+
+    & p:not(:first-child) {
+      margin-bottom: 10px;
+      margin-left: 0;
+    }
+
+    & input {
+      padding: 14.5px 19px;
+    }
+
+    & button {
+      width: 290px;
+      margin-left: 0;
+    }
+  }
+
+  .form-block__form-element {
+    font-family: $font-family-mono;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: $white;
+
+    &--name,
+    &--phone {
+      width: 100%;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    &--text {
+      margin-top: 15px;
+      max-height: 84px;
+      margin-bottom: 28px;
+    }
+  }
+}

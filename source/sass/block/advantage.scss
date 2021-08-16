@@ -1,7 +1,7 @@
 .advantage__wrapper {
   max-width: 1170px;
   margin: auto;
-  margin-top: 109px;
+  margin-top: 111px;
   padding-left: 25px;
   padding-right: 25px;
 }
@@ -18,48 +18,18 @@
   list-style: none;
   margin-bottom: 30px;
   width: 48.4%;
-  height: 299px;
+  min-height: 299px;
   border: 1px solid #ebebeb;
   border-left: 3px solid $primary;
-
-  .advantage__icon {
-    display: block;
-    margin-top: 40px;
-    margin-left: 45px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-
-    &--clock {
-      background-image: url("../img/clock-b.svg");
-      width: 29px;
-      height: 35px;
-    }
-
-    &--people {
-      background-image: url("../img/people-b.svg");
-      width: 35px;
-      height: 35px;
-    }
-
-    &--spy {
-      background-image: url("../img/spy-b.svg");
-      width: 36px;
-      height: 35px;
-    }
-
-    &--pay {
-      background-image: url("../img/tag-b.svg");
-      width: 29px;
-      height: 35px;
-    }
-  }
+  transition: all 0.3s ease;
 
   & h3 {
     font-size: 24px;
     line-height: 34px;
-    margin-left: 45px;
-    color: $gray;
+    margin-left: 42px;
+    margin-bottom: 17px;
+    margin-top: 18px;
+    color: $primary;
     font-weight: normal;
   }
 
@@ -67,7 +37,137 @@
     font-family: $font-family-mono;
     font-size: 16px;
     line-height: 22px;
-    margin-left: 45px;
+    margin-left: 42px;
+    margin-right: 38px;
     color: $gray;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: $primary;
+    border-color: $primary;
+
+    & h3 {
+      color: $white;
+    }
+
+    & p {
+      color: $white;
+    }
+
+    & .advantage__icon--clock {
+      background-image: url("../img/clock-w.svg");
+    }
+
+    & .advantage__icon--people {
+      background-image: url("../img/people-w.svg");
+    }
+
+    & .advantage__icon--spy {
+      background-image: url("../img/spy-w.svg");
+    }
+
+    & .advantage__icon--pay {
+      background-image: url("../img/tag-w.svg");
+    }
+  }
+}
+
+.advantage__icon {
+  display: block;
+  margin-top: 40px;
+  margin-left: 43px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &--clock {
+    background-image: url("../img/clock-b.svg");
+    width: 29px;
+    height: 35px;
+  }
+
+  &--people {
+    background-image: url("../img/people-b.svg");
+    width: 35px;
+    height: 35px;
+  }
+
+  &--spy {
+    background-image: url("../img/spy-b.svg");
+    width: 36px;
+    height: 35px;
+  }
+
+  &--pay {
+    background-image: url("../img/tag-b.svg");
+    width: 29px;
+    height: 35px;
+  }
+}
+
+@media (max-width: $tablet) {
+  .advantage__wrapper {
+    margin-top: 52px;
+  }
+
+  .advantage__item {
+    width: 47.4%;
+    min-height: 232px;
+
+    & h3 {
+      line-height: 34px;
+      margin-left: 24px;
+      margin-bottom: 8px;
+      margin-top: 10px;
+    }
+
+    & p {
+      margin-left: 24px;
+      margin-right: 24px;
+      margin-bottom: 18px;
+    }
+  }
+
+  .advantage__icon {
+    margin-top: 22px;
+    margin-left: 23px;
+
+    &--clock {
+      width: 30px;
+      height: 37px;
+      margin-bottom: -2px;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .advantage__wrapper {
+    margin-top: 37px;
+    padding-left: 14px;
+    padding-right: 16px;
+  }
+
+  .advantage__item {
+    width: 100%;
+    margin-bottom: 20px;
+
+    & h3 {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    & p {
+      margin-bottom: 25px;
+    }
+
+    &--people p {
+      margin-right: 12px;
+    }
+
+    &--pay p {
+      margin-right: 13px;
+      margin-bottom: 23px;
+    }
   }
 }

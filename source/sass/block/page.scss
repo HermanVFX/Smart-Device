@@ -1,5 +1,19 @@
+.page {
+  font-style: normal;
+  scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+}
+
 .page-body {
   margin: 0;
   font-family: $font-family-roboto-cond;
   font-style: normal;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+}
+
+a,
+button {
+  transition: all 0.3s ease;
 }

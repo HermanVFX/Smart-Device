@@ -19,8 +19,10 @@
 .top__title {
   margin-top: 316px;
   max-width: 810px;
-  padding-left: 5%;
-  width: 52%;
+  padding-left: 4.7%;
+  width: 50%;
+  min-height: 550px;
+  position: relative;
 
   & h2 {
     font-weight: bold;
@@ -33,9 +35,9 @@
   }
 
   & p {
-    margin-top: 31px;
+    margin-top: 26px;
     color: $white;
-    padding-left: 94px;
+    padding-left: 96px;
     font-family: $font-family-mono;
     font-style: normal;
     font-weight: normal;
@@ -50,7 +52,7 @@
       width: 66px;
       height: 2px;
       background-color: $white;
-      left: 0;
+      left: 3px;
       top: 17px;
     }
   }
@@ -58,11 +60,12 @@
 
 .top__image {
   height: min-content;
-  width: 43%;
-  margin-top: 258px;
+  width: 45%;
+  margin-top: 257px;
   margin-bottom: 108px;
   background-image: url("../img/top-bg-rt.svg");
-  background-position: 85% 60%;
+  background-repeat: no-repeat;
+  background-position: 84% 62%;
   background-size: 255%;
 
   & img {
@@ -73,8 +76,11 @@
 }
 
 .top__button {
+  display: block;
+  text-decoration: none;
   width: 407px;
-  height: 55px;
+  padding-top: 17px;
+  height: 38px;
   background-color: $primary;
   border-radius: 5px;
   border: none;
@@ -82,14 +88,30 @@
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.06em;
   text-transform: uppercase;
   color: $white;
-  margin-top: 37px;
-  margin-left: 94px;
+  margin-top: 43px;
+  margin-left: 96px;
+
+  &:hover {
+    background-color: $primary-light;
+  }
+}
+
+.top__button-text {
+  width: 100%;
+  text-align: center;
+  display: block;
+
+  &--mobile {
+    visibility: hidden;
+    font-size: 0;
+  }
 }
 
 .top__scroll {
+  position: absolute;
   display: block;
   text-decoration: none;
   font-family: $font-family-mono;
@@ -100,5 +122,154 @@
   opacity: 0.5;
   transform: rotate(-90deg);
   width: max-content;
-  margin: 162px 0 2px -54px;
+  bottom: 132px;
+  left: 38px;
+
+  &:hover {
+    color: $primary;
+    bottom: 124px;
+  }
+}
+
+@media (max-width: $tablet) {
+  .top__wrapper {
+    flex-wrap: nowrap;
+  }
+
+  .top__title {
+    margin-top: 189px;
+    padding-left: 0;
+    margin-left: 88px;
+    width: 60%;
+    min-height: auto;
+
+    & h2 {
+      font-size: 60px;
+      line-height: 70px;
+      letter-spacing: 0.07em;
+    }
+
+    & p {
+      padding-left: 50px;
+      font-size: 18px;
+      line-height: 30px;
+
+      &::after {
+        width: 32px;
+      }
+    }
+  }
+
+  .top__button {
+    width: 379px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $white;
+    margin-top: 52px;
+    margin-left: 50px;
+  }
+
+  .top__scroll {
+    visibility: hidden;
+    font-size: 0;
+    margin: 0;
+  }
+
+  .top__image {
+    height: 500px;
+    width: 55%;
+    margin-top: 80px;
+    margin-left: -80px;
+    margin-bottom: 108px;
+    background-image: url("../img/top-bg-rt.svg");
+    background-position: 66% 113%;
+    background-size: 1429px;
+    overflow: hidden;
+    position: relative;
+
+    & img {
+      position: absolute;
+      top: 33px;
+      right: -204px;
+      width: 465px;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .top__wrapper {
+    flex-direction: column;
+  }
+
+  .top__title {
+    margin-top: -174px;
+    margin-left: 0;
+    width: 100%;
+    margin-bottom: 28px;
+
+    & h2 {
+      font-size: 40px;
+      line-height: 47px;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    & p {
+      padding-left: 50px;
+      font-size: 16px;
+      line-height: 157.8%;
+      margin-left: 15px;
+      margin-right: 15px;
+
+      &::after {
+        width: 33px;
+      }
+    }
+  }
+
+  .top__button {
+    height: 53px;
+    line-height: 18px;
+    padding-top: 0;
+    width: 287px;
+    margin: 42px auto;
+  }
+
+  .top__button-text {
+    &--mobile {
+      visibility: visible;
+      font-size: 16px;
+    }
+
+    &--tablet {
+      visibility: hidden;
+      font-size: 0;
+    }
+  }
+
+  .top__image {
+    order: -1;
+    margin: auto;
+    min-height: 370px;
+    width: 100%;
+    margin-top: 69px;
+    margin-bottom: -108px;
+    background-image: url("../img/top-bg-rt.svg");
+    background-position: 51.5% 142%;
+    background-size: 1359px;
+    position: static;
+
+    & img {
+      position: static;
+      display: block;
+      margin: 22px auto 0 auto;
+      padding-left: 25px;
+      width: 95%;
+      max-width: 380px;
+      height: auto;
+      object-fit: contain;
+      top: auto;
+      right: auto;
+    }
+  }
 }

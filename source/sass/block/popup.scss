@@ -1,0 +1,114 @@
+.popup {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: #00000070;
+  z-index: 6;
+  top: 0;
+
+  &--close {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}
+
+.popup-overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 6;
+}
+
+.popup__form {
+  z-index: 8;
+  font-family: $font-family-mono;
+  color: $white;
+  width: 100%;
+  max-width: 412px;
+  margin: auto;
+  background-color: $primary;
+  padding: 33px 39px 36px 39px;
+  margin-top: 10%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  & p:first-child {
+    font-family: $font-family-roboto-cond;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 140.62%;
+    margin-bottom: 20px;
+  }
+
+  & p:not(:first-child) {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 35px;
+  }
+}
+
+.popup__btn-close {
+  width: 16.5px;
+  height: 16.5px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 0;
+  border: none;
+  background-color: transparent;
+  background-image: url("../img/close.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.popup__form-element {
+  font-family: $font-family-mono;
+  background-color: #ffffff2d;
+  border: none;
+  border-radius: 0;
+  color: $white;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 14px 24px 14px 24px;
+  margin-bottom: 30px;
+
+  &::placeholder {
+    color: $white;
+  }
+
+  &--name,
+  &--phone {
+    height: 23px;
+  }
+
+  &--text {
+    height: 76px;
+  }
+}
+
+.popup__btn-send {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $white;
+  background-color: transparent;
+  border: 1px solid $white;
+  border-radius: 5px;
+  height: 46px;
+}
+
+@media (max-width: $tablet) {
+  .popup {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}

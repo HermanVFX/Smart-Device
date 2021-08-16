@@ -8,9 +8,37 @@
 @import "block/advantage.scss";
 @import "block/about.scss";
 @import "block/services.scss";
+@import "block/form.scss";
+@import "block/footer.scss";
+// popup
+@import "block/popup.scss";
 // elements
 @import "elem/logo.scss";
 
 p {
   margin: 0;
+}
+
+.tablet {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+@media (max-width: $tablet) {
+  .desktop {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    margin: 0;
+    font-size: 0;
+  }
+
+  .tablet {
+    visibility: visible;
+    width: auto;
+    height: auto;
+    margin: auto;
+  }
 }

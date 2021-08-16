@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="page" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@
 
     <header class="page-body__header header">
       <div class="header__wrapper">
-        <div class="header__logo logo-block">
+        <div class="header__logo logo-block logo-block--header">
           <img src="img/logo.svg" width="52" height="52" alt="Логотип Smart Device">
           <p>Smart Device</p>
           <p>умные технологии</p>
@@ -24,7 +24,7 @@
         <div class="header__contacts">
           <a href="#" class="header__contact-item header__contact-item--mail">info@sd.ru</a>
           <a href="#" class="header__contact-item header__contact-item--phone">+7 (495) 000 52 52</a>
-          <button class="header__contact-button">Заказать звонок</button>
+          <button type="button" class="header__contact-button">Заказать звонок</button>
         </div>
       </div>
     </header>
@@ -40,7 +40,10 @@
           <div class="top__title">
             <h2>Печатные платы</h2>
             <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
-            <button class="top__button">Получить бесплатную консультацию</button>
+            <a href="#" class="top__button">
+              <span class="top__button-text top__button-text--tablet">Получить бесплатную консультацию</span>
+              <span class="top__button-text top__button-text--mobile">Бесплатная консультация</span>
+            </a>
             <a class="top__scroll" href="#footer">Скролл вниз</a>
           </div>
           <div class="top__image">
@@ -54,25 +57,25 @@
       <section class="advantage">
         <div class="advantage__wrapper">
           <ul class="advantage__list">
-            <li class="advantage__item">
+            <li class="advantage__item advantage__item--clock">
               <span class="advantage__icon advantage__icon--clock"></span>
               <h3>Оперативные сроки</h3>
               <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и доставлять заказы плат и комплектующих в самые короткие сроки</p>
             </li>
 
-            <li class="advantage__item">
+            <li class="advantage__item advantage__item--people">
               <span class="advantage__icon advantage__icon--people"></span>
               <h3>Крупные поставщики</h3>
               <p>Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND. Сотрудничество с такими компаниями обеспичивает хорошее качество нашей продукции.</p>
             </li>
 
-            <li class="advantage__item">
+            <li class="advantage__item advantage__item--spy">
               <span class="advantage__icon advantage__icon--spy"></span>
               <h3>Полная конфиденциальность</h3>
               <p>По желанию клиента  мы обеспечиваем полную конфеденциальность.</p>
             </li>
 
-            <li class="advantage__item">
+            <li class="advantage__item advantage__item--pay">
               <span class="advantage__icon advantage__icon--pay"></span>
               <h3>Персонализация стоимости</h3>
               <p>Мы  подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас устраивает.</p>
@@ -86,7 +89,7 @@
       <section class="about">
         <div class="about__wrapper">
           <h2 class="about__head">О компании</h2>
-          <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.<br><br>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</p>
+          <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.<br><br>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог<span class="tablet">..</span><span class="desktop">(РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</span></p>
           <a href="#" class="about__button">Подробнее</a>
         </div>
       </section>
@@ -98,18 +101,24 @@
           <h2 class="services__head">Service Device предлагает следующие товары и услуги</h2>
           <ul class="servises__list">
             <li class="services__item services__item--production">
-              <h3>Производство печатных плат</h3>
-              <a href="#" class="services__button"></a>
+              <a href="#" class="services__item__wrapper">
+                <h3>Производство печатных плат</h3>
+                <span class="services__button"></span>
+              </a>
             </li>
 
             <li class="services__item services__item--mounting">
-              <h3>Монтаж печатных плат</h3>
-              <a href="#" class="services__button"></a>
+              <a href="#" class="services__item__wrapper">
+                <h3>Монтаж печатных плат</h3>
+                <span class="services__button"></span>
+              </a>
             </li>
 
             <li class="services__item services__item--components">
-              <h3>Комплектующие для светотехники</h3>
-              <a href="#" class="services__button"></a>
+              <a href="#" class="services__item__wrapper">
+                <h3>Комплектующие для светотехники</h3>
+                <span class="services__button"></span>
+              </a>
             </li>
           </ul>
         </div>
@@ -119,45 +128,67 @@
 
       <section class="form-block">
         <div class="form-block__wrapper">
-          <form action="" method="post">
+          <form class="form-block__form" method="post">
             <p>Остались вопросы? Задайте их нам!</p>
             <p>Мы проконсультируем Вас бесплатно</p>
-            <input type="text" name="" id="" placeholder="Имя">
-            <input type="tel" name="" id="" placeholder="Телефон">
-            <textarea name="" id="" cols="30" rows="10">Ваш вопрос</textarea>
-            <label for="">
+            <input class="form-block__form-element form-block__form-element--name" type="text" name="name" id="name" placeholder="Имя">
+            <input class="form-block__form-element form-block__form-element--phone" type="tel" name="tel" id="tel" placeholder="Телефон">
+            <textarea class="form-block__form-element form-block__form-element--text" name="question" id="question" cols="30" rows="10">Ваш вопрос</textarea>
+            <label class="form-block__form-element form-block__form-element--checkbox" for="">
               <input type="checkbox" name="" id="">
               Я согласен на обработку  персональных данных
             </label>
-            <button>Задать вопрос</button>
+            <button onclick="contactSaveLocalStorage()">Задать вопрос</button>
           </form>
         </div>
       </section>
+
+      <!-- popup -->
+
+      <div class="popup popup--close">
+        <div class="popup-overlay"></div>
+        <form class="popup__form" method="post">
+          <p>Закажите звонок</p>
+          <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
+          <input class="popup__form-element popup__form-element--name" type="text" name="name" id="name" placeholder="Имя">
+          <input class="popup__form-element popup__form-element--phone" type="tel" name="tel" id="tel" placeholder="Телефон">
+          <textarea class="popup__form-element popup__form-element--text" name="question" id="question" cols="30" rows="10">Ваш вопрос</textarea>
+          <button type="button" class="popup__btn-send" onclick="contactSaveLocalStorage()">Задать вопрос</button>
+          <label class="popup__form-checkbox" for="">
+            <input type="checkbox" name="" id="">
+            Я согласен на обработку  персональных данных
+          </label>
+          <button type="button" class="popup__btn-close">Закрыть</button>
+        </form>
+      </div>
     </main>
 
     <!-- footer -->
 
-    <footer class="page-body__footer footer">
+    <footer id="footer" class="page-body__footer footer">
 
       <div class="footer__wrapper">
 
         <div class="footer__social">
-          <div class="footer__logo logo-block">
-            <img src="img/logo.svg" width="52" height="52" alt="Логотип Smart Device">
-            <p>Smart Device</p>
+          <div class="footer__logo logo-block logo-block--footer">
+            <img src="img/logo.svg" width="52" height="52" alt="Логотип Service Device">
+            <p>Service Device</p>
             <p>умные технологии</p>
           </div>
           <p>1999-2018 SD Service Devices</p>
           <ul class="footer__social-list">
-            <li><a href="#">facebook</a></li>
-            <li><a href="#">ok</a></li>
-            <li><a href="#">vk</a></li>
+            <li><a class="footer__social-item footer__social-item--facebook" href="#">facebook</a></li>
+            <li><a class="footer__social-item footer__social-item--ok" href="#">ok</a></li>
+            <li><a class="footer__social-item footer__social-item--vk" href="#">vk</a></li>
           </ul>
         </div>
 
         <div class="footer__menu-block">
-          <p>Разделы сайта</p>
-          <nav class="footer__menu">
+          <div class="footer__menu-head">
+            <p>Разделы сайта</p>
+            <button type="button" class="footer__menu-button"></button>
+          </div>
+          <nav class="footer__menu accordeon-open">
             <ul>
               <li><a href="#">О компании</a></li>
               <li><a href="#">Продукты</a></li>
@@ -171,12 +202,15 @@
         </div>
 
         <div class="footer__contact">
-          <p>Наш офис</p>
-          <ul class="footer__contact-list">
-            <ul><a href="#">г. Мытищи, Олимпийский проспект, д.10</a></ul>
-            <ul><a href="#">+7 (495) 589-40-50</a></ul>
-            <ul><a href="#">+7 (925) 003-87-67</a></ul>
-            <ul><a href="#">+7 (926) 926-080-79</a></ul>
+          <div class="footer__contact-head">
+            <p>Наш офис</p>
+            <button type="button" class="footer__contact-button"></button>
+          </div>
+          <ul class="footer__contact-list accordeon-open">
+            <li><a href="#">г. Мытищи, Олимпийский проспект, д.10</a></li>
+            <li><a href="#">+7 (495) 589-40-50</a></li>
+            <li><a href="#">+7 (925) 003-87-67</a></li>
+            <li><a href="#">+7 (926) 926-080-79</a></li>
           </ul>
         </div>
       </div>
