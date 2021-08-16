@@ -1,3 +1,9 @@
+.footer {
+  & a:hover {
+    color: $primary;
+  }
+}
+
 .footer__wrapper {
   max-width: 1412px;
   padding-left: 25px;
@@ -17,6 +23,10 @@
     line-height: 25px;
     color: #1b2d37;
     opacity: 0.5;
+
+    &:hover {
+      color: $primary;
+    }
   }
 }
 
@@ -91,6 +101,10 @@
 
   &--vk {
     background-image: url("../img/social-vk.svg");
+  }
+
+  &:hover {
+    filter: contrast(175%) brightness(3%);
   }
 }
 
