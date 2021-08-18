@@ -1,11 +1,16 @@
 .top {
-  background-color: #1b2d37;
+  background-color: $gray-darck;
   background-image: url("../img/top-mask.png");
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/top-mask-x2.png");
+  }
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: -85px;
-  max-height: 878px;
+  height: max-content;
 }
 
 .top__wrapper {
@@ -14,6 +19,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding-bottom: 12px;
 }
 
 .top__title {
@@ -62,7 +68,7 @@
   height: min-content;
   width: 45%;
   margin-top: 257px;
-  margin-bottom: 108px;
+  margin-bottom: 90px;
   background-image: url("../img/top-bg-rt.svg");
   background-repeat: no-repeat;
   background-position: 84% 62%;
@@ -122,7 +128,7 @@
   opacity: 0.5;
   transform: rotate(-90deg);
   width: max-content;
-  bottom: 132px;
+  bottom: 115px;
   left: 38px;
 
   &:hover {
@@ -180,7 +186,7 @@
     width: 55%;
     margin-top: 80px;
     margin-left: -80px;
-    margin-bottom: 108px;
+    margin-bottom: 93px;
     background-image: url("../img/top-bg-rt.svg");
     background-position: 66% 113%;
     background-size: 1429px;
@@ -199,6 +205,7 @@
 @media (max-width: $mobile) {
   .top__wrapper {
     flex-direction: column;
+    padding-bottom: 0;
   }
 
   .top__title {

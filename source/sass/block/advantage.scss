@@ -20,7 +20,7 @@
   margin-bottom: 30px;
   width: 48.4%;
   min-height: 299px;
-  border: 1px solid #ebebeb;
+  border: 1px solid $white-dark;
   border-left: 3px solid $primary;
   transition: all 0.3s ease;
 
@@ -109,7 +109,7 @@
 
 @media (max-width: $tablet) {
   .advantage__wrapper {
-    padding-top: 51px;
+    padding-top: 54px;
   }
 
   .advantage__item {

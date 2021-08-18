@@ -54,7 +54,7 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #1b2d37;
-    margin-bottom: 24px;
+    margin-bottom: 9px;
   }
 }
 
@@ -79,6 +79,7 @@
 
   & li {
     list-style: none;
+    margin-bottom: 12px;
   }
 }
 
@@ -218,18 +219,13 @@
 
   .footer__social-list {
     margin-top: 12px;
+    margin-bottom: 3px;
   }
 
   .footer__menu-block {
     margin-top: 38px;
     margin-left: 25px;
     width: 45%;
-  }
-
-  .footer__menu-head {
-    & > p {
-      margin-left: 2px;
-    }
   }
 
   .footer__contact-list {
@@ -249,9 +245,11 @@
     margin-top: 38px;
   }
 
-  .footer__contact-head {
+  .footer__contact-head,
+  .footer__menu-head {
     & > p {
       margin-left: 2px;
+      margin-bottom: 22px;
     }
   }
 
@@ -339,7 +337,7 @@
   }
 
   .footer__social-list {
-    margin: 12px auto 14px auto;
+    margin: 12px auto 0 auto;
   }
 
   .footer__contact {

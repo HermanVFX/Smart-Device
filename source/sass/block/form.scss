@@ -24,6 +24,11 @@
     width: 511px;
     height: 288px;
     background-image: url("../img/airplane.png");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/airplane-x2.png");
+    }
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -94,6 +99,12 @@
   font-size: 16px;
   line-height: 22px;
   color: $white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
 
   &::placeholder {
     color: $white;
@@ -117,6 +128,9 @@
     order: 1;
     display: flex;
     position: relative;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 8px;
 
     & input {
       appearance: none;
@@ -124,6 +138,7 @@
       --moz-appearance: none;
       background-color: transparent;
       z-index: 4;
+      cursor: pointer;
     }
 
     & span {
@@ -131,7 +146,7 @@
       width: 16px;
       height: 16px;
       border: 1px solid $white;
-      top: 7px;
+      top: -1px;
       left: 6px;
       z-index: 2;
     }
@@ -140,12 +155,6 @@
       background-image: url("../img/chek.svg");
       background-position: center;
       background-repeat: no-repeat;
-    }
-
-    & p {
-      font-size: 14px;
-      line-height: 16px;
-      margin-top: 7px;
     }
   }
 }
@@ -219,6 +228,17 @@
       max-height: 134px;
       margin-bottom: 46px;
     }
+
+    &--checkbox {
+      font-size: 14px;
+      line-height: 16px;
+      margin-top: 8px;
+      margin-right: 10px;
+
+      & span {
+        left: 10px;
+      }
+    }
   }
 }
 
@@ -271,6 +291,17 @@
       margin-top: 15px;
       max-height: 84px;
       margin-bottom: 28px;
+    }
+
+    &--checkbox {
+      font-size: 14px;
+      line-height: 16px;
+      margin-top: 32px;
+      margin-left: -11px;
+
+      & span {
+        left: 10px;
+      }
     }
   }
 }

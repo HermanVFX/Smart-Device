@@ -51,42 +51,6 @@
   }
 }
 
-.popup__form-checkbox {
-  display: flex;
-  position: relative;
-  margin-top: 36px;
-  width: 90%;
-  word-spacing: 2px;
-  font-size: 14px;
-  line-height: 16px;
-  font-weight: normal;
-
-  & input {
-    appearance: none;
-    --webkit-appearance: none;
-    --moz-appearance: none;
-    background-color: transparent;
-    width: 42px;
-    z-index: 12;
-  }
-
-  & span {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    border: 1px solid $white;
-    top: 2px;
-    left: 0;
-    z-index: 2;
-  }
-
-  & input:checked + span {
-    background-image: url("../img/chek.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-}
-
 .popup__btn-close {
   width: 16.5px;
   height: 16.5px;
@@ -113,6 +77,12 @@
   line-height: 22px;
   padding: 14px 24px 14px 24px;
   margin-bottom: 30px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
 
   &::placeholder {
     color: $white;
@@ -128,6 +98,43 @@
   }
 }
 
+.popup__form-checkbox {
+  display: flex;
+  position: relative;
+  margin-top: 36px;
+  width: 90%;
+  word-spacing: 2px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: normal;
+
+  & input {
+    appearance: none;
+    --webkit-appearance: none;
+    --moz-appearance: none;
+    background-color: transparent;
+    width: 42px;
+    z-index: 12;
+    cursor: pointer;
+  }
+
+  & span {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $white;
+    top: 2px;
+    left: 0;
+    z-index: 2;
+  }
+
+  & input:checked + span {
+    background-image: url("../img/chek.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
 .popup__btn-send {
   font-weight: bold;
   font-size: 14px;
@@ -140,6 +147,11 @@
   border: 1px solid $white;
   border-radius: 5px;
   height: 46px;
+
+  &:hover {
+    background-color: $white;
+    color: $primary;
+  }
 }
 
 @media (max-width: $tablet) {
