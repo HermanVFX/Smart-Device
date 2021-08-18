@@ -8,6 +8,8 @@ var callBlock = document.querySelector('.popup');
 var callCloseBtn = document.querySelector('.popup__btn-close');
 var callOverlay = document.querySelector('.popup-overlay');
 
+var tel = document.querySelectorAll('.phone-input');
+
 var popupSendBtn = document.getElementById('popup-send-button');
 var popupPhone = document.getElementById('popup-tel');
 var popupName = document.getElementById('popup-name');
@@ -83,23 +85,64 @@ var successBtn = document.querySelector('.success__close');
       }
     }
   };
+  // Маска для поля телефона
+  // https://javascript.ru/forum/dom-window/63870-kak-sdelat-masku-telefona-v-input-c-7-___-bez-jquery.html
+  window.addEventListener('DOMContentLoaded', function () {
+    function setCursorPosition(pos, elem) {
+      elem.focus();
+      if (elem.setSelectionRange) {
+        elem.setSelectionRange(pos, pos);
+      } else if (elem.createTextRange) {
+        var range = elem.createTextRange();
+        range.collapse(true);
+        range.moveEnd('character', pos);
+        range.moveStart('character', pos);
+        range.select();
+      }
+    }
+    function mask(event) {
+      for (var index = 0; index < tel.length; index++) {
+        var elem = tel[index];
+        var matrix = '+7 (___) ___ ____';
+        var i = 0;
+        var def = matrix.replace(/\D/g, '');
+        var val = elem.value.replace(/\D/g, '');
+        if (def.length >= val.length) {
+          val = def;
+        }
+        elem.value = matrix.replace(/./g, function (a) {
+          if (/[_\d]/.test(a) && i < val.length) {
+            return val.charAt(i++);
+          } else if (i >= val.length) {
+            return '';
+          } else {
+            return a;
+          }
+        });
+        if (event.type === 'blur') {
+          if (elem.value.length === 2) {
+            elem.value = '';
+          }
+        } else {
+          setCursorPosition(elem.value.length, elem);
+        }
+      }
+    }
+    popupPhone.addEventListener('input', mask, false);
+    popupPhone.addEventListener('focus', mask, false);
+    popupPhone.addEventListener('blur', mask, false);
+    mainPhone.addEventListener('input', mask, false);
+    mainPhone.addEventListener('focus', mask, false);
+    mainPhone.addEventListener('blur', mask, false);
+  });
 
-  popupPhone.onclick = function () {
-    popupPhone.value = "+7";
-  };
-  // Не даю ввести в поле телефон ничего кроме цифр
-  popupPhone.oninput = function () {
-    var value = popupPhone.value;
-    popupPhone.value = value.replace(/^\-?\d*?(\.\d+)?/,'');
-  };
-
-  popupSendBtn.addEventListener ('click', function () {
-    if (popupPhone.checkValidity() ==! false && popupCheck.checked) {
-    localStorage.setItem("name", popupName.value);
-    localStorage.setItem("phone", popupPhone.value);
-    localStorage.setItem("question", popupQuestion.value);
-    callBlock.classList.add('popup--close');
-    success.classList.remove('success--close');
+  popupSendBtn.addEventListener('click', function () {
+    if (popupPhone.checkValidity() === true && popupCheck.checked) {
+      localStorage.setItem('name', popupName.value);
+      localStorage.setItem('phone', popupPhone.value);
+      localStorage.setItem('question', popupQuestion.value);
+      callBlock.classList.add('popup--close');
+      success.classList.remove('success--close');
     } else {
       popupName.style.outline = '1px solid #FE7865';
       popupPhone.style.outline = '1px solid #FE7865';
@@ -107,12 +150,12 @@ var successBtn = document.querySelector('.success__close');
     }
   });
 
-  mainSendBtn.addEventListener ('click', function () {
-    if (mainPhone.checkValidity() ==! false && mainCheck.checked) {
-    localStorage.setItem("name", mainName.value);
-    localStorage.setItem("phone", mainPhone.value);
-    localStorage.setItem("question", mainQuestion.value);
-    success.classList.remove('success--close');
+  mainSendBtn.addEventListener('click', function () {
+    if (mainPhone.checkValidity() === true && mainCheck.checked) {
+      localStorage.setItem('name', mainName.value);
+      localStorage.setItem('phone', mainPhone.value);
+      localStorage.setItem('question', mainQuestion.value);
+      success.classList.remove('success--close');
     } else {
       mainName.style.outline = '1px solid #FE7865';
       mainPhone.style.outline = '1px solid #FE7865';
@@ -120,4 +163,3 @@ var successBtn = document.querySelector('.success__close');
     }
   });
 })();
-

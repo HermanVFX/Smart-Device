@@ -28,7 +28,7 @@
   max-width: 412px;
   margin: auto;
   background-color: $primary;
-  padding: 33px 39px 36px 39px;
+  padding: 30px 39px 36px 39px;
   margin-top: 10%;
   position: relative;
   display: flex;
@@ -40,13 +40,50 @@
     font-weight: normal;
     font-size: 28px;
     line-height: 140.62%;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
 
   & p:not(:first-child) {
+    width: 90%;
     font-size: 16px;
     line-height: 22px;
     margin-bottom: 35px;
+  }
+}
+
+.popup__form-checkbox {
+  display: flex;
+  position: relative;
+  margin-top: 36px;
+  width: 90%;
+  word-spacing: 2px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: normal;
+
+  & input {
+    appearance: none;
+    --webkit-appearance: none;
+    --moz-appearance: none;
+    background-color: transparent;
+    width: 42px;
+    z-index: 12;
+  }
+
+  & span {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $white;
+    top: 2px;
+    left: 0;
+    z-index: 2;
+  }
+
+  & input:checked + span {
+    background-image: url("../img/chek.svg");
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 

@@ -16,6 +16,23 @@
 // elements
 @import "elem/logo.scss";
 
+.advantage-about-wrapper {
+  background-image: url("../img/about-bg.svg");
+  background-position: 0 34%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 110px;
+}
+
+.visually-hidden {
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
 p {
   margin: 0;
 }
@@ -28,6 +45,13 @@ p {
 }
 
 @media (max-width: $tablet) {
+  .advantage-about-wrapper {
+    padding-bottom: 2px;
+    background-image: url("../img/about-bg-tablet.svg");
+    background-position: 276px 56%;
+    background-size: 766px;
+  }
+
   .desktop {
     visibility: hidden;
     width: 0;
@@ -41,5 +65,12 @@ p {
     width: auto;
     height: auto;
     margin: auto;
+  }
+}
+
+@media (max-width: $mobile) {
+  .advantage-about-wrapper {
+    background-position: -60px 76%;
+    background-size: 243%;
   }
 }

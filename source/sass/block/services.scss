@@ -9,7 +9,6 @@
   padding-bottom: 112px;
   padding-left: 25px;
   padding-right: 25px;
-  margin-top: 110px;
 }
 
 .services__head {
@@ -20,7 +19,7 @@
   color: $white;
 }
 
-.servises__list {
+.services__list {
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -90,7 +89,7 @@
     background-color: $gray-darck;
   }
 
-  .servises__list {
+  .services__list {
     grid-template-columns: 1fr;
   }
 

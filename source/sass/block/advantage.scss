@@ -1,7 +1,7 @@
 .advantage__wrapper {
   max-width: 1170px;
   margin: auto;
-  margin-top: 111px;
+  padding-top: 111px;
   padding-left: 25px;
   padding-right: 25px;
 }
@@ -15,6 +15,7 @@
 }
 
 .advantage__item {
+  background-color: $white;
   list-style: none;
   margin-bottom: 30px;
   width: 48.4%;
@@ -108,7 +109,7 @@
 
 @media (max-width: $tablet) {
   .advantage__wrapper {
-    margin-top: 52px;
+    padding-top: 51px;
   }
 
   .advantage__item {
@@ -143,7 +144,7 @@
 
 @media (max-width: $mobile) {
   .advantage__wrapper {
-    margin-top: 37px;
+    padding-top: 37px;
     padding-left: 14px;
     padding-right: 16px;
   }

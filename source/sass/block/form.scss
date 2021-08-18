@@ -27,7 +27,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    left: -26px;
+    left: 0;
     top: 72px;
   }
 }
@@ -115,6 +115,38 @@
   &--checkbox {
     width: 270px;
     order: 1;
+    display: flex;
+    position: relative;
+
+    & input {
+      appearance: none;
+      --webkit-appearance: none;
+      --moz-appearance: none;
+      background-color: transparent;
+      z-index: 4;
+    }
+
+    & span {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border: 1px solid $white;
+      top: 7px;
+      left: 6px;
+      z-index: 2;
+    }
+
+    & input:checked + span {
+      background-image: url("../img/chek.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    & p {
+      font-size: 14px;
+      line-height: 16px;
+      margin-top: 7px;
+    }
   }
 }
 
