@@ -6,6 +6,7 @@
 }
 
 .page-body {
+  height: 100%;
   margin: 0;
   font-family: $font-family-roboto-cond;
   font-style: normal;
@@ -21,4 +22,9 @@ button {
   &:active {
     opacity: 0.4;
   }
+}
+// Убрать белое выделение при автозаполнении
+input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px $primary-input inset;
+  -webkit-text-fill-color: $white;
 }

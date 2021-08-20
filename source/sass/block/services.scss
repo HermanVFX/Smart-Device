@@ -6,7 +6,7 @@
   max-width: 1170px;
   margin: auto;
   padding-top: 57px;
-  padding-bottom: 112px;
+  padding-bottom: 84px;
   padding-left: 25px;
   padding-right: 25px;
 }
@@ -33,6 +33,7 @@
   background-repeat: no-repeat;
   position: relative;
   list-style: none;
+  margin-bottom: 30px;
 
   &--production {
     background-image: url("../img/item-1.jpg");
@@ -58,7 +59,7 @@
     }
   }
 
-  & h3 {
+  h3 {
     font-weight: normal;
     font-size: 20px;
     line-height: 30px;
@@ -74,6 +75,7 @@
   display: block;
   text-decoration: none;
   background-color: $primary-op;
+  min-height: 620px;
   margin: 0;
   height: 100%;
   width: 100%;
@@ -109,7 +111,7 @@
     min-height: 256px;
     margin-bottom: 46px;
 
-    & h3 {
+    h3 {
       padding-top: 42px;
     }
 
@@ -125,6 +127,10 @@
         background-image: url("../img/item-1-tablet-x2.jpg");
       }
     }
+  }
+
+  .services__item__wrapper {
+    min-height: 256px;
   }
 
   .services__wrapper {
@@ -161,10 +167,9 @@
   }
 
   .services__item {
-    min-height: 256px;
     margin-bottom: 30px;
 
-    & h3 {
+    h3 {
       padding-top: 20px;
       margin-left: 35px;
     }
@@ -174,7 +179,12 @@
     }
 
     &--production {
-      background-size: 150%;
+      background-image: url("../img/item-1-mobile.jpg");
+      background-size: 111%;
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/item-1-mobile-x2.jpg");
+      }
     }
   }
 }

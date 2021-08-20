@@ -19,7 +19,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-bottom: 12px;
+  padding-bottom: 100px;
 }
 
 .top__title {
@@ -27,10 +27,10 @@
   max-width: 810px;
   padding-left: 4.7%;
   width: 50%;
-  min-height: 550px;
+  min-height: 461px;
   position: relative;
 
-  & h2 {
+  h2 {
     font-weight: bold;
     font-size: 80px;
     line-height: 94px;
@@ -40,7 +40,7 @@
     margin: 0 0 0 0;
   }
 
-  & p {
+  p {
     margin-top: 26px;
     color: $white;
     padding-left: 96px;
@@ -68,13 +68,12 @@
   height: min-content;
   width: 45%;
   margin-top: 257px;
-  margin-bottom: 90px;
   background-image: url("../img/top-bg-rt.svg");
   background-repeat: no-repeat;
   background-position: 84% 62%;
   background-size: 255%;
 
-  & img {
+  img {
     width: 100%;
     height: auto;
     object-fit: contain;
@@ -128,7 +127,7 @@
   opacity: 0.5;
   transform: rotate(-90deg);
   width: max-content;
-  bottom: 115px;
+  bottom: 26px;
   left: 38px;
 
   &:hover {
@@ -149,13 +148,13 @@
     width: 60%;
     min-height: auto;
 
-    & h2 {
+    h2 {
       font-size: 60px;
       line-height: 70px;
       letter-spacing: 0.07em;
     }
 
-    & p {
+    p {
       padding-left: 50px;
       font-size: 18px;
       line-height: 30px;
@@ -186,14 +185,14 @@
     width: 55%;
     margin-top: 80px;
     margin-left: -80px;
-    margin-bottom: 93px;
+    margin-bottom: 6px;
     background-image: url("../img/top-bg-rt.svg");
     background-position: 66% 113%;
     background-size: 1429px;
     overflow: hidden;
     position: relative;
 
-    & img {
+    img {
       position: absolute;
       top: 33px;
       right: -204px;
@@ -210,18 +209,20 @@
 
   .top__title {
     margin-top: -174px;
-    margin-left: 0;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     margin-bottom: 28px;
+    max-width: 520px;
 
-    & h2 {
+    h2 {
       font-size: 40px;
       line-height: 47px;
-      margin-left: 15px;
-      margin-right: 15px;
+      max-width: 290px;
+      margin-left: 12px;
     }
 
-    & p {
+    p {
       padding-left: 50px;
       font-size: 16px;
       line-height: 157.8%;
@@ -266,13 +267,13 @@
     background-size: 1359px;
     position: static;
 
-    & img {
+    img {
       position: static;
       display: block;
       margin: 22px auto 0 auto;
-      padding-left: 25px;
+      padding-left: 8%;
       width: 95%;
-      max-width: 380px;
+      max-width: 320px;
       height: auto;
       object-fit: contain;
       top: auto;

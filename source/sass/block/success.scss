@@ -7,7 +7,7 @@
   top: 0;
   transition: all 0.3s ease;
 
-  & .success__block {
+  .success__block {
     transition: all 0.3s ease;
     margin-top: 10%;
   }
@@ -16,7 +16,7 @@
     visibility: hidden;
     opacity: 0;
 
-    & .success__block {
+    .success__block {
       margin-top: 15%;
     }
   }
@@ -69,13 +69,13 @@
   }
 
   .success {
-    & .success__block {
+    .success__block {
       position: fixed;
       bottom: 0;
     }
 
     &--close {
-      & .success__block {
+      .success__block {
         bottom: 2%;
       }
     }

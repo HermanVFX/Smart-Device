@@ -16,8 +16,10 @@
 .header__contacts {
   display: flex;
   flex-wrap: wrap;
-  justify-content: right;
+  justify-content: flex-end;
   margin-top: 37px;
+  width: 70%;
+  min-width: 700px;
 }
 
 .header__contact-item {
@@ -61,6 +63,14 @@
 
 .header__logo {
   margin-top: 33px;
+  width: 20%;
+  min-width: 201px;
+}
+
+.header__contacts-list {
+  width: 517px;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
 }
 
 .header__contact-button {
@@ -90,8 +100,14 @@
     padding-right: 0;
   }
 
+  .header__contacts-list {
+    width: auto;
+  }
+
   .header__contacts {
     margin-top: 23px;
+    min-width: auto;
+    width: max-content;
   }
 
   .header__contact-item {
@@ -107,6 +123,7 @@
     &--phone::after {
       width: 24px;
       height: 24px;
+      top: -4px;
     }
   }
 
@@ -126,8 +143,14 @@
 
 @media (max-width: $mobile) {
   .header__logo {
-    margin-top: 17px;
+    margin-top: 10px;
     margin-left: 17px;
+    min-width: auto;
+
+    img {
+      width: 39px;
+      object-fit: contain;
+    }
   }
 
   .header__contacts {

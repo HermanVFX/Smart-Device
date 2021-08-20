@@ -5,6 +5,12 @@
   background: #00000070;
   z-index: 6;
   top: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   transition: all 0.3s ease;
 
   &--close {
@@ -14,7 +20,7 @@
 }
 
 .popup-overlay {
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 100vw;
   z-index: 6;
@@ -29,13 +35,12 @@
   margin: auto;
   background-color: $primary;
   padding: 30px 39px 36px 39px;
-  margin-top: 10%;
   position: relative;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 
-  & p:first-child {
+  p:first-child {
     font-family: $font-family-roboto-cond;
     font-weight: normal;
     font-size: 28px;
@@ -43,11 +48,47 @@
     margin-bottom: 12px;
   }
 
-  & p:not(:first-child) {
+  p:not(:first-child) {
     width: 90%;
     font-size: 16px;
     line-height: 22px;
     margin-bottom: 35px;
+  }
+
+  label {
+    width: 100%;
+    pointer-events: none;
+    z-index: 8;
+  }
+
+  input,
+  textarea {
+    pointer-events: all;
+    z-index: 10;
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+    max-width: 364px;
+    font-family: $font-family-mono;
+    background-color: #ffffff2d;
+    border: none;
+    border-radius: 0;
+    color: $white;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 14px 24px 14px 24px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &::placeholder {
+      color: $white;
+    }
   }
 }
 
@@ -67,33 +108,13 @@
 }
 
 .popup__form-element {
-  font-family: $font-family-mono;
-  background-color: #ffffff2d;
-  border: none;
-  border-radius: 0;
-  color: $white;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 22px;
-  padding: 14px 24px 14px 24px;
-  margin-bottom: 30px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.7;
-  }
-
-  &::placeholder {
-    color: $white;
-  }
-
   &--name,
   &--phone {
     height: 23px;
   }
 
   &--text {
+    resize: none;
     height: 76px;
   }
 }
@@ -108,27 +129,32 @@
   line-height: 16px;
   font-weight: normal;
 
-  & input {
+  input {
     appearance: none;
     --webkit-appearance: none;
     --moz-appearance: none;
     background-color: transparent;
-    width: 42px;
+    width: 17px;
+    height: 16px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    padding: 0;
     z-index: 12;
     cursor: pointer;
+    margin-right: 30px;
   }
 
-  & span {
+  span {
     position: absolute;
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 14px;
     border: 1px solid $white;
-    top: 2px;
+    top: 0;
     left: 0;
     z-index: 2;
   }
 
-  & input:checked + span {
+  input:checked + span {
     background-image: url("../img/chek.svg");
     background-position: center;
     background-repeat: no-repeat;

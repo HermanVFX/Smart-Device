@@ -1,14 +1,12 @@
 .form-block {
   background-color: $primary;
-  background-image: url("../img/airplane-bg.svg");
-  background-position: 100% 64%;
-  background-repeat: no-repeat;
-  background-size: 1750px;
   min-height: 580px;
   padding-top: 90px;
+  overflow: hidden;
 }
 
 .form-block__wrapper {
+  z-index: 1;
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-end;
@@ -21,7 +19,7 @@
   &::after {
     content: "";
     position: absolute;
-    width: 511px;
+    width: 42%;
     height: 288px;
     background-image: url("../img/airplane.png");
 
@@ -34,6 +32,20 @@
     background-size: contain;
     left: 0;
     top: 72px;
+  }
+
+  &::before {
+    position: absolute;
+    top: -150px;
+    right: -632px;
+    width: 178%;
+    height: 764px;
+    content: "";
+    background-image: url("../img/airplane-bg.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
   }
 }
 
@@ -48,7 +60,7 @@
   justify-content: space-between;
   color: $white;
 
-  & p:first-child {
+  p:first-child {
     font-family: $font-family-roboto-cond;
     width: 100%;
     font-weight: normal;
@@ -58,21 +70,23 @@
     margin-bottom: 10px;
   }
 
-  & p:not(:first-child) {
+  p:not(:first-child) {
     width: 100%;
     margin-bottom: 10px;
   }
 
-  & input,
-  & textarea {
-    background-color: #19baff;
+  input,
+  textarea {
+    pointer-events: all;
+    background-color: $primary-input;
     color: $white;
     border: none;
     border-radius: 0;
     padding: 14px 16px;
+    z-index: 4;
   }
 
-  & button {
+  button {
     width: 270px;
     height: 45px;
     border: 1px solid $white;
@@ -84,12 +98,18 @@
     text-align: center;
     letter-spacing: -0.05em;
     text-transform: uppercase;
+    z-index: 4;
 
     &:hover {
       background-color: $white;
       color: $primary;
       cursor: pointer;
     }
+  }
+
+  label {
+    pointer-events: none;
+    z-index: 2;
   }
 }
 
@@ -121,6 +141,7 @@
     width: 100%;
     max-height: 130px;
     margin-bottom: 42px;
+    resize: none;
   }
 
   &--checkbox {
@@ -130,18 +151,23 @@
     position: relative;
     font-size: 14px;
     line-height: 16px;
-    margin-top: 8px;
+    margin-top: 6px;
 
-    & input {
+    input {
       appearance: none;
       --webkit-appearance: none;
       --moz-appearance: none;
       background-color: transparent;
       z-index: 4;
       cursor: pointer;
+      padding: 0;
+      margin-top: -2px;
+      margin-right: 18px;
+      width: 31px;
+      height: 20px;
     }
 
-    & span {
+    span {
       position: absolute;
       width: 16px;
       height: 16px;
@@ -151,7 +177,7 @@
       z-index: 2;
     }
 
-    & input:checked + span {
+    input:checked + span {
       background-image: url("../img/chek.svg");
       background-position: center;
       background-repeat: no-repeat;
@@ -178,34 +204,37 @@
       height: 0;
       visibility: hidden;
     }
+
+    &::before {
+      width: 0;
+      height: 0;
+      visibility: hidden;
+    }
   }
 
   .form-block__form {
     width: 100%;
 
-    & p:first-child {
+    p:first-child {
       font-size: 32px;
       line-height: 140.62%;
       margin-bottom: 17px;
     }
 
-    & p:not(:first-child) {
+    p:not(:first-child) {
       width: 100%;
       margin-bottom: 10px;
       margin-left: 2px;
     }
 
-    & input {
-      padding: 17px 19px;
-    }
-
-    & textarea {
+    textarea {
       padding: 13px 19px;
     }
 
-    & button {
+    button {
       width: 280px;
       margin-left: 2px;
+      margin-top: 2px;
     }
   }
 
@@ -220,7 +249,8 @@
     &--phone {
       width: 240px;
       margin-top: 40px;
-      margin-bottom: 40px;
+      margin-bottom: 42px;
+      padding: 17px 19px;
     }
 
     &--text {
@@ -230,12 +260,13 @@
     }
 
     &--checkbox {
+      padding: 0;
       font-size: 14px;
       line-height: 16px;
-      margin-top: 8px;
-      margin-right: 10px;
+      margin-top: 12px;
+      margin-right: 9px;
 
-      & span {
+      span {
         left: 10px;
       }
     }
@@ -251,24 +282,24 @@
   }
 
   .form-block__form {
-    & p:first-child {
+    p:first-child {
       font-size: 28px;
       line-height: 140.62%;
       margin-left: 0;
       margin-bottom: 12px;
     }
 
-    & p:not(:first-child) {
+    p:not(:first-child) {
       margin-bottom: 10px;
       margin-left: 0;
     }
 
-    & input {
+    input {
       padding: 14.5px 19px;
     }
 
-    & button {
-      width: 290px;
+    button {
+      width: 100%;
       margin-left: 0;
     }
   }
@@ -299,7 +330,7 @@
       margin-top: 32px;
       margin-left: -11px;
 
-      & span {
+      span {
         left: 10px;
       }
     }

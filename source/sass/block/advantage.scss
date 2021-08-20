@@ -24,7 +24,7 @@
   border-left: 3px solid $primary;
   transition: all 0.3s ease;
 
-  & h3 {
+  h3 {
     font-size: 24px;
     line-height: 34px;
     margin-left: 42px;
@@ -34,7 +34,7 @@
     font-weight: normal;
   }
 
-  & p {
+  p {
     font-family: $font-family-mono;
     font-size: 16px;
     line-height: 22px;
@@ -48,27 +48,27 @@
     background-color: $primary;
     border-color: $primary;
 
-    & h3 {
+    h3 {
       color: $white;
     }
 
-    & p {
+    p {
       color: $white;
     }
 
-    & .advantage__icon--clock {
+    .advantage__icon--clock {
       background-image: url("../img/clock-w.svg");
     }
 
-    & .advantage__icon--people {
+    .advantage__icon--people {
       background-image: url("../img/people-w.svg");
     }
 
-    & .advantage__icon--spy {
+    .advantage__icon--spy {
       background-image: url("../img/spy-w.svg");
     }
 
-    & .advantage__icon--pay {
+    .advantage__icon--pay {
       background-image: url("../img/tag-w.svg");
     }
   }
@@ -116,14 +116,14 @@
     width: 47.4%;
     min-height: 232px;
 
-    & h3 {
+    h3 {
       line-height: 34px;
       margin-left: 24px;
       margin-bottom: 8px;
       margin-top: 10px;
     }
 
-    & p {
+    p {
       margin-left: 24px;
       margin-right: 24px;
       margin-bottom: 18px;
@@ -153,12 +153,12 @@
     width: 100%;
     margin-bottom: 20px;
 
-    & h3 {
+    h3 {
       font-size: 20px;
       margin-bottom: 6px;
     }
 
-    & p {
+    p {
       margin-bottom: 25px;
     }
 

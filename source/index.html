@@ -16,14 +16,17 @@
 
     <header class="page-body__header header">
       <div class="header__wrapper">
-        <div class="header__logo logo-block logo-block--header">
-          <img src="img/logo.svg" width="52" height="52" alt="Логотип Smart Device">
-          <p>Smart Device</p>
-          <p>умные технологии</p>
-        </div>
+        <a href="#" class="header__logo">
+          <picture>
+            <source media="(max-width: 767px)" srcset="img/logo.svg">
+            <img src="img/logo-header-desktop.svg" width="202" height="52" alt="Логотип Smart Device">
+          </picture>
+        </a>
         <div class="header__contacts">
-          <a href="mailto:info@sd.ru" class="header__contact-item header__contact-item--mail">info@sd.ru</a>
-          <a href="tel:+74950005252" class="header__contact-item header__contact-item--phone">+7 (495) 000 52 52</a>
+          <div class="header__contacts-list">
+            <a href="mailto:info@sd.ru" class="header__contact-item header__contact-item--mail">info@sd.ru</a>
+            <a href="tel:+74950005252" class="header__contact-item header__contact-item--phone">+7 (495) 000 52 52</a>
+          </div>
           <button aria-label="Callback" type="button" class="header__contact-button">Заказать звонок</button>
         </div>
       </div>
@@ -50,6 +53,7 @@
           </div>
           <div class="top__image">
             <picture>
+              <!-- 1х: 705px; 2x: 1410px -->
               <source srcset="img/broad.webp, img/broad-x2.webp 2x" type="image/webp">
               <img src="img/broad.png" srcset="img/broad-x2.png 2x" width="705" height="515" alt="Печатные платы">
             </picture>
@@ -141,9 +145,13 @@
           <form class="form-block__form" id="main-form">
             <p>Остались вопросы? Задайте их нам!</p>
             <p>Мы проконсультируем Вас бесплатно</p>
-            <input class="form-block__form-element form-block__form-element--name" type="text" name="name" id="main-name" placeholder="Имя" required>
-            <input class="form-block__form-element form-block__form-element--phone phone-input" type="tel" name="tel" id="main-tel" placeholder="Телефон" maxlength="17" required>
-            <textarea class="form-block__form-element form-block__form-element--text" name="question" id="main-question" cols="30" rows="10" required>Ваш вопрос</textarea>
+            <label for="main-name">
+              <input class="form-block__form-element form-block__form-element--name" type="text" name="name" id="main-name" placeholder="Имя" required>
+            </label>
+            <label for="main-tel">
+              <input class="form-block__form-element form-block__form-element--phone phone-input" type="tel" name="tel" id="main-tel" placeholder="Телефон" minlength="17" maxlength="17" required>
+            </label>
+            <textarea class="form-block__form-element form-block__form-element--text" name="question" id="main-question" cols="30" rows="10" placeholder="Ваш вопрос"></textarea>
             <label class="form-block__form-element form-block__form-element--checkbox" for="main-check">
               <input type="checkbox" name="check" id="main-check">
               <span class="form-block__check"></span>
@@ -161,9 +169,13 @@
         <form class="popup__form" id="popup-form">
           <p>Закажите звонок</p>
           <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
-          <input class="popup__form-element popup__form-element--name" type="text" name="name" id="popup-name" placeholder="Имя" required>
-          <input class="popup__form-element popup__form-element--phone phone-input" type="tel" name="tel" id="popup-tel" placeholder="Телефон" maxlength="17" required>
-          <textarea class="popup__form-element popup__form-element--text" name="question" id="popup-question" cols="30" rows="10" required>Ваш вопрос</textarea>
+          <label for="popup-name">
+            <input class="popup__form-element popup__form-element--name" type="text" name="name" id="popup-name" placeholder="Имя" required>
+          </label>
+          <label for="popup-tel">
+            <input class="popup__form-element popup__form-element--phone phone-input" type="tel" name="tel" id="popup-tel" placeholder="Телефон" minlength="17" maxlength="17" required>
+          </label>
+          <textarea class="popup__form-element popup__form-element--text" name="question" id="popup-question" cols="30" rows="10" placeholder="Ваш вопрос"></textarea>
           <button aria-label="Send" type="button" id="popup-send-button" form="popup-form" class="popup__btn-send">Отправить</button>
           <label class="popup__form-checkbox" for="popup-check">
             <input type="checkbox" name="check" id="popup-check" required>
@@ -179,7 +191,7 @@
       <div class="success success--close">
         <div class="success__block">
           <p>Заявка отправлена</p>
-          <button aria-label="Close" class="success__close">Закрыть</button>
+          <button aria-label="Close" type="button" class="success__close">Закрыть</button>
         </div>
         <div class="success-overlay"></div>
       </div>
@@ -192,11 +204,9 @@
       <div class="footer__wrapper">
 
         <div class="footer__social">
-          <div class="footer__logo logo-block logo-block--footer">
-            <img src="img/logo.svg" width="52" height="52" alt="Логотип Service Device">
-            <p>Service Device</p>
-            <p>умные технологии</p>
-          </div>
+          <a href="#" class="footer__logo">
+            <img src="img/logo-footer-desktop.svg" width="216" height="52" alt="Логотип Service Device">
+          </a>
           <p>1999-2018 SD Service Devices</p>
           <ul class="footer__social-list">
             <li><a class="footer__social-item footer__social-item--facebook" href="#">facebook</a></li>
@@ -208,7 +218,7 @@
         <div class="footer__menu-block">
           <div class="footer__menu-head">
             <p>Разделы сайта</p>
-            <button aria-label="Open" type="button" class="footer__menu-button"></button>
+            <button aria-label="Open" type="button" class="footer__menu-button accordeon-btn-open"></button>
           </div>
           <nav class="footer__menu accordeon-open">
             <ul>
@@ -226,7 +236,7 @@
         <div class="footer__contact">
           <div class="footer__contact-head">
             <p>Наш офис</p>
-            <button aria-label="Open" type="button" class="footer__contact-button"></button>
+            <button aria-label="Open" type="button" class="footer__contact-button accordeon-btn-open"></button>
           </div>
           <ul class="footer__contact-list accordeon-open">
             <li><a href="https://goo.gl/maps/RPnYznzUZgmT8MLVA">г. Мытищи, Олимпийский проспект, д.10</a></li>
@@ -254,6 +264,6 @@
 
     <!-- scripts -->
 
-    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
