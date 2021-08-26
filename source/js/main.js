@@ -189,6 +189,7 @@
     popupCheck
   ) {
     popupSendBtn.addEventListener('click', function () {
+      clearError();
       if (
         popupForm.checkValidity() === true &&
         popupCheck.checked &&
@@ -202,14 +203,25 @@
           openSuccess();
         }, 250);
       } else {
-        error(popupName);
-        error(popupPhone);
-        error(popupCheck);
+        if (popupName.value < 1) {
+          error(popupName);
+        }
+        if (!popupCheck.checked) {
+          error(popupCheck);
+        }
+        if (popupPhone.value.length !== 17) {
+          error(popupPhone);
+        }
         setTimeout(function () {
           clearError();
         }, 5000);
       }
     });
+    window.onresize = function () {
+      if (window.innerWidth < 1024) {
+        closePopup();
+      }
+    };
   }
   // Отправка формы
   if (
@@ -221,6 +233,7 @@
     mainCheck
   ) {
     mainSendBtn.addEventListener('click', function () {
+      clearError();
       if (
         mainForm.checkValidity() === true &&
         mainCheck.checked &&
@@ -233,9 +246,16 @@
           openSuccess();
         }, 250);
       } else {
-        error(mainName);
-        error(mainPhone);
-        error(mainCheck);
+        if (mainName.value < 1) {
+          error(mainName);
+        }
+        if (!mainCheck.checked) {
+          error(mainCheck);
+        }
+        if (mainPhone.value.length !== 17) {
+          error(mainPhone);
+        }
+
         setTimeout(function () {
           clearError();
         }, 5000);

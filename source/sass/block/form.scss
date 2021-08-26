@@ -3,6 +3,10 @@
   min-height: 580px;
   padding-top: 90px;
   overflow: hidden;
+
+  .error {
+    background-color: $error;
+  }
 }
 
 .form-block__wrapper {
@@ -79,11 +83,15 @@
   textarea {
     pointer-events: all;
     background-color: $primary-input;
-    color: $white;
+    color: $black-lite;
     border: none;
     border-radius: 0;
     padding: 14px 16px;
     z-index: 4;
+
+    &::placeholder {
+      color: $white;
+    }
   }
 
   button {
@@ -105,11 +113,6 @@
       color: $primary;
       cursor: pointer;
     }
-  }
-
-  label {
-    pointer-events: none;
-    z-index: 2;
   }
 }
 
@@ -145,7 +148,8 @@
   }
 
   &--checkbox {
-    width: 270px;
+    width: 240px;
+    margin-right: 30px;
     order: 1;
     display: flex;
     position: relative;
@@ -162,9 +166,13 @@
       cursor: pointer;
       padding: 0;
       margin-top: -2px;
-      margin-right: 18px;
-      width: 31px;
+      margin-right: 12px;
+      width: 38px;
       height: 20px;
+    }
+
+    .error + span {
+      border-color: $error;
     }
 
     span {
@@ -243,11 +251,14 @@
     font-weight: normal;
     font-size: 16px;
     line-height: 22px;
-    color: $white;
+
+    ::placeholder {
+      color: $white;
+    }
 
     &--name,
     &--phone {
-      width: 240px;
+      width: 245px;
       margin-top: 40px;
       margin-bottom: 42px;
       padding: 17px 19px;
@@ -260,14 +271,19 @@
     }
 
     &--checkbox {
+      width: 250px;
       padding: 0;
       font-size: 14px;
       line-height: 16px;
-      margin-top: 12px;
-      margin-right: 9px;
+      margin-top: 11px;
+      margin-right: 25px;
+
+      input {
+        margin-right: 15px;
+      }
 
       span {
-        left: 10px;
+        left: 6px;
       }
     }
   }
@@ -279,9 +295,12 @@
     padding-right: 15px;
     padding-top: 31px;
     min-height: 610px;
+    overflow: initial;
   }
 
   .form-block__form {
+    flex-direction: column;
+
     p:first-child {
       font-size: 28px;
       line-height: 140.62%;
@@ -313,7 +332,10 @@
 
     &--name,
     &--phone {
+      box-sizing: border-box;
       width: 100%;
+      margin-left: 0;
+      margin-right: 0;
       margin-top: 15px;
       margin-bottom: 15px;
     }
@@ -322,6 +344,11 @@
       margin-top: 15px;
       max-height: 84px;
       margin-bottom: 28px;
+      box-sizing: border-box;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      min-height: 108px;
     }
 
     &--checkbox {
@@ -330,8 +357,18 @@
       margin-top: 32px;
       margin-left: -11px;
 
+      input {
+        margin-right: 10px;
+        padding: 0;
+        width: 50px;
+      }
+
       span {
         left: 10px;
+      }
+
+      label {
+        width: 270px;
       }
     }
   }

@@ -56,9 +56,15 @@
   }
 
   label {
-    width: 100%;
-    pointer-events: none;
-    z-index: 8;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    .error {
+      background-color: $error;
+    }
   }
 
   input,
@@ -73,7 +79,7 @@
     background-color: #ffffff2d;
     border: none;
     border-radius: 0;
-    color: $white;
+    color: $black-lite;
     font-weight: normal;
     font-size: 16px;
     line-height: 22px;
@@ -134,14 +140,18 @@
     --webkit-appearance: none;
     --moz-appearance: none;
     background-color: transparent;
-    width: 17px;
+    width: 20px;
     height: 16px;
     margin-top: 0;
     margin-bottom: 14px;
     padding: 0;
     z-index: 12;
     cursor: pointer;
-    margin-right: 30px;
+    margin-right: 27px;
+  }
+
+  .error + span {
+    border-color: $error;
   }
 
   span {
